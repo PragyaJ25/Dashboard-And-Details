@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="  crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://www.momentcrm.com/embed"></script>
+    <script>
+      MomentCRM('init', {
+        'teamVanityId': 'vanarsena245',
+        'doChat': true,
+        'doTracking': true,
+      });
+    </script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            
+             <span class="logo_name">CISP</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#" class="active">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-box'></i>
+                    <span class="links_name">About</span>
+                </a>
+            </li>
+           
+            <li>
+                <a href="#">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Academics</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-coin-stack'></i>
+                    <span class="links_name">Interviews</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-message'></i>
+                    <span class="links_name">Contacks</span>
+                </a>
+            </li>
+            <li class="log_out">
+                <a href="#">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="dashboard">Dashboard</span>
+            </div>
+            <div class="profile-details">
+                <div class="icons">
+                    <a class="fas fa-user" href="#"></a>
+                    <!-- <span class="admin_name">username</span> -->
+                </div>
+            </div>
+        </nav>
+
+       
+
+        <div class="home-content">
+            <div class="overview-boxes">
+                <div class="slides">
+                    <img src = "company1.jpg" class="active">
+                    <img src = "u.jpg">
+                    <img src = "t.jpeg">
+                    <img src = "w.webp">
+                    <img src = "v.png">
+                </div>
+
+                <div class="buttons">
+                    <span class="next">&#10095;</span>
+                    <span class="prev">&#10094;</span>
+                </div>
+
+            </div>
+
+                <script type="text/javascript">
+                    //access the image
+                    let slideImages = document.querySelectorAll('img');
+                    //access the next and prev buttons
+                    let next = document.querySelector('.next');
+                    let prev = document.querySelector('.prev');
+                    // Access the indicators
+
+                    let dots = document.querySelectorAll('.dot');
+
+                    var counter = 0;
+
+                    //code for next button
+                    next.addEventListener('click', slideNext);
+                    function slideNext(){
+                        slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+
+                        if(counter >= slideImages.length-1){
+                            counter = 0;
+                        }
+                        else{
+                            counter++;
+                        }
+                        slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+                    }
+                    //code for prev button
+
+                    prev.addEventListener('click', slidePrev);
+                    function slidePrev(){
+                        slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+
+                        if(counter == 0){
+                            counter = slideImages.length-1;
+                        }
+                        else{
+                            counter--;
+                        }
+                        slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';
+                    }
+
+                    //autosliding
+
+                    function autosliding(){
+                        deletInterval = setInterval(timer, 3500);
+                        function timer(){
+                            slideNext();
+                        }
+                    }
+
+                    autosliding();
+                    //stop autosliding when mouse is over
+
+                    const container = document.querySelector('.slides');
+                    container.addEventListener('mouseover' , function(){
+                        clearInterval(deletInterval)
+                    });
+
+                    //resume sliding when mouse is out
+
+                    container.addEventListener('mouseout', autosliding);
+
+
+                </script>
+                <div class="overview-boxes1">
+                <div class="box2">
+                    <div class="right-side2">
+                        <div class="box-topic2"><a href="#">RESUME</a></div>
+                        <div class="number2"></div>
+                        <div class="indicator2">
+                            <iconify-icon icon="mingcute:paper-fill"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="right-side1">
+                        <div class="box-topic1"><a href="#">INTERVIEW</a></div>
+                        <div class="number1"></div>
+                        <div class="indicator1">
+                            <iconify-icon icon="ph:student-fill"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="box3">
+                    <div class="right-side3">
+                        <div class="box-topic3"><a href="#">CHATBOX</a></div>
+                        <div class="number3"></div>
+                        <div class="indicator3">
+                            <iconify-icon icon="mdi:chat"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="heading">
+                <h2> RESOURCES AND ACTIVITIES:</h2>
+            </div>
+            <div class="cardhead">
+            <div class="card">
+                <div class="imgbox">
+                    <img src="f.jpg"/>
+                </div>
+                <div class="content">
+                    <h3>SAMPLE RESUME</h3>
+                    <p> Contains various samples of the resume selected </p>
+                </div>
+            </div>
+
+            <div class="card1">
+                <div class="imgbox1">
+                    <img src="3.avif"/>
+                </div>
+                <div class="content1">
+                    <h3>SAVED INTERVIEWS</h3>
+                    <p> Displays all the saved Interviews </p>
+                </div>
+            </div>
+
+            <div class="card2">
+                <div class="imgbox2">
+                    <img src="a.png"/>
+                </div>
+                <div class="content2">
+                    <h4>PRACTICE PLATFORMS</h4>
+                    <p>Recommendation of various sited or apps for more practice  </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footerContainer">
+                <div class="socialicons">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="footerNav">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">News</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact us</a></li>
+                        <li><a href="">Our Team</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footerbottom">
+                <p>Copyright &copy;2023; Designed by <span class="designer">PRAGYA JOSHI</span></p>
+            </div>
+    
+        </footer>
+
+     </section> 
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function() {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    </script>
+
+</body>
+
+
+</html>
